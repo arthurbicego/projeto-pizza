@@ -1,140 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../IMG/divina-pizzaria.png" type="image/x-icon">
-    <title>Pizzaria Divina</title>
-    <link rel="stylesheet" href="../CSS/reset.css">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/login.css">
-    <link rel="stylesheet" href="../CSS/carrinho.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&family=Martel:wght@200;400;700&display=swap" rel="stylesheet">
-</head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../IMG/divina-pizzaria.png" type="image/x-icon">
+  <title>Pizzaria Divina - Carrinho</title>
+  <link rel="stylesheet" href="../CSS/reset.css">
+  <link rel="stylesheet" href="../CSS/carrinho.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&family=Martel:wght@200;400;700&display=swap"
+    rel="stylesheet">
+</head>
+
 <body>
-    <header class="cabecalho">
-        <img class="cabecalho__logo__pizzadivina" src="../IMG/logo 1.png" alt="Logo divina pizzaria">  
-        <div class="container"> 
-            <nav class="container__lista__navegacao">
-                <input type="checkbox" id="menu" class="container__botao">
-                <label for="menu">
-                    <span class="cabecalho__menu__hamburguer"></span>
-                </label> 
-                <ul class="lista__menu">
-                    <li class="lista__menu__informacoes"></li>
-                    <li class="lista__menu__item">
-                        <a href="../HTML/index.html" class="lista__menu__link">Inicio</a>
-                    </li>
-                    <li class="lista__menu__item">
-                        <a href="../HTML/cardapio.html" class="lista__menu__link">Cardápio</a>
-                    </li>
-                </ul> 
-            </nav>       
-        </div>
-        <div class="container__carrinho">
-            <nav class="container__carrinho__navegacao">
-                <ul class="login">
-                    <img class="imagem__login" src="../IMG/img-login.png" alt="Logo-login">
-                    <li class="lista__menu__login">
-                        <a href="../HTML/login.html" class="lista__menu__login">Login</a>
-                    </li>
-                    <img class="imagem__carrinho" src="../IMG/carrinho.png" alt="Imagem carrinho">
-                    <li class="lista__menu__carrinho">
-                        <a class="lista__menu__carrinho" href="../HTML/carrinho.html">Carrinho</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <section class="container__historia">
-            <div class="menu__container__historia">
-                <div class="container__texto">
-                    <div class="login__interacao">
-                        <img class="imagem__carrinho_titulo" src="../IMG/forno-a-lenha - titulo.png" alt="Logo-pizza">
-                        <div class="titulo__container">
-                            <img class="login__texto" src="../IMG/carrinho.png" alt="Logo-pizza">
-                            <h4 class="login__texto">Carrinho</h4>
-                        </div>
-                        <img class="imagem__carrinho_titulo" src="../IMG/forno-a-lenha - titulo.png" alt="Logo-pizza">
-                    </div>
-                    <div class="login__interacao">
-                        <h3 class="login__subtitulo">Descrição</h3>
-                        <h3 class="login__subtitulo">QTD</h3>
-                        <h3 class="login__subtitulo">Preço</h3>
-                        <h3 class="login__subtitulo">SubTotal</h3>
-                        <h3 class="login__subtitulo">x</h3>
-                    </div>
-                    <div id="linha-horizontal"></div>
-                    <div class="login__interacao">
-                        <div class="titulo__container">
-                            <img class="login__texto" src="../IMG/img-pizza.png" alt="Logo-pizza">
-                            <h3 class="login__itens">Marguerita</h3>
-                        </div>
-                        <h3 class="login__subtitulo">1</h3>
-                        <h3 class="login__subtitulo">R$ 49,99</h3>
-                        <h3 class="login__subtitulo">R$ 49,99</h3>
-                        <h3 class="login__subtitulo">X</h3>
-                    </div>
-                    <div class="login__interacao">
-                        <div class="titulo__container">
-                            <img class="login__texto" src="../IMG/img-pizza-doce.png" alt="Logo-pizza">
-                            <h3 class="login__itens">Brigadeiro  </h3>
-                        </div>
-                        <h3 class="login__subtitulo">1</h3>
-                        <h3 class="login__subtitulo">R$ 55,99</h3>
-                        <h3 class="login__subtitulo">R$ 55,99</h3>
-                        <h3 class="login__subtitulo">X</h3>
-                    </div>
-                    <div class="login__interacao">
-                        <div class="titulo__container">
-                            <img class="login__texto" src="../IMG/img-refri.png" alt="Logo-pizza">
-                            <h3 class="login__itens">Coca Cola Lata  </h3>
-                        </div>
-                        <h3 class="login__subtitulo">3</h3>
-                        <h3 class="login__subtitulo">R$ 6,99</h3>
-                        <h3 class="login__subtitulo">R$ 20,97</h3>
-                        <h3 class="login__subtitulo">X</h3>
-                    </div>
-                    <div id="linha-horizontal"></div>                      
-                    <div class="login__infoextras">
-                        <div>Opções de Frete</div>
-                        <div>Valores</div>
-                    </div>
-                    <div class="login__infoextras">
-                        <div>Retirada</div>
-                        <div>Entrega</div>
-                    </div>
-                    <div class="login__infoextras">
-                        <div>Frete</div>
-                        <div>Total</div>
-                    </div>
-                </div>
+  <script src="../JAVASCRIPT/header.js"></script>
+
+  <main>
+    <section class="container__logo__pedido">
+      <h1>Carrinho</h1>
+      <img class="logo__carrinho" src="../IMG/carrinho.png" alt="">
+    </section>
+    <table>
+      <thead>
+        <tr>
+          <section class="container__avalia__pedido">
+            <div>
+              <ul class="container__pedidos">
+                <img class="img__pedido" src="../IMG/forno-a-lenha - titulo.png" alt="">
+                <li class="pedido__texto">Descrição</li>
+                <li class="pedido__texto">QTD</li>
+                <li class="pedido__texto">Valor</li>
+              </ul>
             </div>
-        </section>
-    </main>
-    <footer>
-        <section class="container__funcionamento">
-            <h4 class="cabecalho__funcionamento__texto">Funcionamento</h4> 
-            <div class="menu__container__funcionamento">
-                <table class="container__tabela">
-                    <thead class="cabecalho__tabela">
-                        <tr class="cabecalho__dias">
-                            <th>Dia</th>
-                            <th>Horário</th>
-                        </tr>
-                    </thead>
-                </table> 
+            <hr>
+          </section>
+        </tr>
+      </thead>
+      <tbody class="corpo-itens-carrinho">
+        <tr class="produto-carrinho">
+          <section class="container__avalia__pedido">
+
+            <div class="container__pedidos">
+              <ul id="listaCarrinho" class="">
+                <script>
+                  // Recupera os itens do carrinho do localStorage
+                  const itensCarrinho = JSON.parse(localStorage.getItem('itensCarrinho')) || [];
+
+                  // Exibe os itens do carrinho na página do carrinho
+                  const listaCarrinho = document.getElementById('listaCarrinho');
+
+                  itensCarrinho.forEach(function (item) {
+                    const novoElemento = document.createElement('li');
+
+                    // Criar uma div para conter o item
+                    const divElement = document.createElement('div');
+                    divElement.className = "item__carrinho";
+
+                    // Criar a imagem
+                    const imgElement = document.createElement('img');
+                    imgElement.className = "logo__imagem__cardapio"; // Atribuir classe diretamente
+                    imgElement.src = item.imagem; // Definir o src diretamente
+                    divElement.appendChild(imgElement);
+
+                    // Criar a descrição
+                    const divNome = document.createElement('div');
+                    divNome.textContent = `${item.nome}`;
+                    divElement.appendChild(divNome);
+
+                    // Criar a quantidade
+                    const divQtd = document.createElement('div');
+                    divQtd.textContent = "1";
+                    divElement.appendChild(divQtd);
+
+                    // Criar o valor
+                    const divValor = document.createElement('div');
+                    divValor.textContent = `${item.valor}`;
+                    divElement.appendChild(divValor);
+
+                    // Criar botão de exclusão
+                    const btnExcluir = document.createElement('button');
+                    btnExcluir.textContent = 'Excluir';
+                    btnExcluir.className = 'botao-remove-produto';
+
+                    // Adicionar um manipulador de eventos para excluir o item
+                    btnExcluir.addEventListener('click', function () {
+                      // Remover o item do carrinho
+                      itensCarrinho.splice(index, 1);
+
+                      // Atualizar o localStorage
+                      localStorage.setItem('itensCarrinho', JSON.stringify(itensCarrinho));
+
+                      // Remover o elemento da lista
+                      listaCarrinho.removeChild(novoElemento);
+                    });
+
+                    // Adicionar o botão de exclusão como filho da div
+                    divElement.appendChild(btnExcluir);
+
+                    // Adicionar a div como filho do novo elemento <li>
+                    novoElemento.appendChild(divElement);
+
+                    // Adicionar o novo elemento <li> à lista
+                    listaCarrinho.appendChild(novoElemento);
+                  });
+                </script>
+                <!-- <button class="botao-remove-produto">Remover</button> -->
+              </ul>
+              <!-- <li class="pedido__texto">Marguerita</li>
+              <li class="pedido__texto">1</li>
+              <li class="pedido__texto">49,99</li> -->
             </div>
-            <div class="rodape__localizacao">
-                <p>Divino Pizzaria</p>
-                <img class="logo__frame" src="../IMG/Frame.png" alt="Logo localização">
-                <p><a class="link__rodape" target="_blank" href="https://maps.app.goo.gl/pnuHPz6e1sw1Yps58">AV.Secreta tenta de novo,1010</a></p>
-            </div>
-            <p class="talento__cloud">Talento Cloud 2023</p>
-        </section>
-    </footer>
+
+          </section>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <div class="container__caixa__observacao">
+        <label class="caixa__obsevacao" for="mensagem">Observações</label>
+        <textarea name="mensagem" id="mensagem" cols="30" rows="10"
+          placeholder="Ex:Sem cebola, tomate, etc..."></textarea>
+      </div>
+    </div>
+    <div>
+      <section class="container__retirar__pedido">
+        <h5 class="opcoes__retirada__texto">Opções de retirada</h5>
+        <p class="taxa__entrega">Taxa de entrega 12,00</p>
+        <label for="radio-retirar">Balcão</label>
+        <input type="radio" name="contato" value="texto" id="radio-retirar">
+        <label for="radio-entrega">Entrega</label>
+        <input type="radio" name="contato" value="texto" id="radio-entrega">
+      </section>
+    </div>
+    <div>
+      <section class="container__total">
+        <ul>
+          <li class="lista__total">Valores</li>
+          <li class="lista__total">Frete</li>
+          <li class="lista__total">Total</li>
+        </ul>
+        <ul>
+          <li class="lista__total">171,97</li>
+          <li class="lista__total">12,00</li>
+          <li class="lista__total">171,97</li>
+        </ul>
+      </section>
+    </div>
+    </section>
+    <div onclick="abreModal()" class="container__btn">
+      <button type="button" class="btn">Confirmar pedido</button>
+    </div>
+
+    <div class="janela-modal" id="janela-modal">
+      <div class="modal">
+        <button id="fechar" class="fechar">X</button>
+        <h3>Pedido Concluído</h3>
+      </div>
+    </div>
+  </main>
+  <script src="../JAVASCRIPT/carrinho.js"></script>
+  <script src="../JAVASCRIPT/footer.js"></script>
 </body>
+
 </html>
