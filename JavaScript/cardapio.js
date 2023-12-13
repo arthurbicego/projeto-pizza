@@ -19,6 +19,7 @@ botaoAdicionaProduto.addEventListener("click", function (event) {
     imagem: productImage,
     nome: productName,
     valor: productValue,
+    quantidade: 1,
   }; // Por padrão, a quantidade é 1
 
   // Recupera os itens existentes no carrinho (se houver)

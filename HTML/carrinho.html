@@ -33,6 +33,7 @@
                 <li class="pedido__texto">Descrição</li>
                 <li class="pedido__texto">QTD</li>
                 <li class="pedido__texto">Valor</li>
+                <li class="pedido__texto">Ação</li>
               </ul>
             </div>
             <hr>
@@ -46,72 +47,108 @@
             <div class="container__pedidos">
               <ul id="listaCarrinho" class="">
                 <script>
-                  // Recupera os itens do carrinho do localStorage
-                  const itensCarrinho = JSON.parse(localStorage.getItem('itensCarrinho')) || [];
+                  function processarItensCarrinho() {
+                    const itensCarrinho = JSON.parse(localStorage.getItem('itensCarrinho')) || [];
+                    var tempPizzas = [];
 
-                  // Exibe os itens do carrinho na página do carrinho
+                    itensCarrinho.forEach(function (pizza) {
+                      const verificaPizzaTemp = tempPizzas.find(item => item.nome == pizza.nome);
+
+                      if (verificaPizzaTemp) {
+                        tempPizzas.forEach(item => {
+                          if (item.nome == pizza.nome) {
+                            item.quantidade += 1;
+                          }
+                        });
+                      } else {
+                        tempPizzas.push({
+                          imagem: pizza.imagem,
+                          nome: pizza.nome,
+                          valor: pizza.valor,
+                          quantidade: pizza.quantidade
+                        });
+                      }
+                    });
+
+                    localStorage.setItem('itensCarrinho', JSON.stringify(Object.values(tempPizzas)));
+                  }
+
+                  processarItensCarrinho();
+
+                  const itensCarrinho = JSON.parse(localStorage.getItem('itensCarrinho')) || [];
                   const listaCarrinho = document.getElementById('listaCarrinho');
 
-                  itensCarrinho.forEach(function (item) {
+                  itensCarrinho.forEach(function (item, index) {
                     const novoElemento = document.createElement('li');
-
-                    // Criar uma div para conter o item
                     const divElement = document.createElement('div');
                     divElement.className = "item__carrinho";
 
-                    // Criar a imagem
                     const imgElement = document.createElement('img');
-                    imgElement.className = "logo__imagem__cardapio"; // Atribuir classe diretamente
-                    imgElement.src = item.imagem; // Definir o src diretamente
+                    imgElement.className = "logo__imagem__cardapio";
+                    imgElement.src = item.imagem;
                     divElement.appendChild(imgElement);
 
-                    // Criar a descrição
                     const divNome = document.createElement('div');
                     divNome.textContent = `${item.nome}`;
                     divElement.appendChild(divNome);
 
-                    // Criar a quantidade
                     const divQtd = document.createElement('div');
-                    divQtd.textContent = "1";
+                    divQtd.textContent = `${item.quantidade}`;
                     divElement.appendChild(divQtd);
 
-                    // Criar o valor
                     const divValor = document.createElement('div');
                     divValor.textContent = `${item.valor}`;
                     divElement.appendChild(divValor);
 
-                    // Criar botão de exclusão
                     const btnExcluir = document.createElement('button');
-                    btnExcluir.textContent = 'Excluir';
+                    btnExcluir.textContent = '-';
                     btnExcluir.className = 'botao-remove-produto';
 
-                    // Adicionar um manipulador de eventos para excluir o item
                     btnExcluir.addEventListener('click', function () {
-                      // Remover o item do carrinho
-                      itensCarrinho.splice(index, 1);
-
-                      // Atualizar o localStorage
-                      localStorage.setItem('itensCarrinho', JSON.stringify(itensCarrinho));
-
-                      // Remover o elemento da lista
-                      listaCarrinho.removeChild(novoElemento);
+                      handleRemoveItem(item, novoElemento);
                     });
 
-                    // Adicionar o botão de exclusão como filho da div
+                    const btnIncrementar = document.createElement('button');
+                    btnIncrementar.textContent = '+';
+                    btnIncrementar.className = 'botao-remove-produto';
+
+                    btnIncrementar.addEventListener('click', function () {
+                      handleIncrementItem(item);
+                    });
+
+                    divElement.appendChild(btnIncrementar);
                     divElement.appendChild(btnExcluir);
 
-                    // Adicionar a div como filho do novo elemento <li>
                     novoElemento.appendChild(divElement);
-
-                    // Adicionar o novo elemento <li> à lista
                     listaCarrinho.appendChild(novoElemento);
                   });
+
+                  function handleRemoveItem(item, novoElemento) {
+                    const itemIndex = itensCarrinho.findIndex(pizza => pizza.nome === item.nome);
+
+                    if (itensCarrinho[itemIndex].quantidade > 1) {
+                      itensCarrinho[itemIndex].quantidade -= 1;
+                    } else {
+                      itensCarrinho.splice(itemIndex, 1);
+                      listaCarrinho.removeChild(novoElemento);
+                    }
+
+                    localStorage.setItem('itensCarrinho', JSON.stringify(itensCarrinho));
+                    window.location.reload();
+                  }
+
+                  function handleIncrementItem(item) {
+                    const itemIndex = itensCarrinho.findIndex(pizza => pizza.nome === item.nome);
+
+                    if (itemIndex !== -1) {
+                      itensCarrinho[itemIndex].quantidade += 1;
+                      localStorage.setItem('itensCarrinho', JSON.stringify(itensCarrinho));
+                      window.location.reload();
+                    }
+                  }
                 </script>
-                <!-- <button class="botao-remove-produto">Remover</button> -->
+
               </ul>
-              <!-- <li class="pedido__texto">Marguerita</li>
-              <li class="pedido__texto">1</li>
-              <li class="pedido__texto">49,99</li> -->
             </div>
 
           </section>
